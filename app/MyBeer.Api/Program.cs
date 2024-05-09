@@ -1,15 +1,24 @@
 using Microsoft.EntityFrameworkCore;
-using MyBeer.Infrastructure.Data;
+using MyBeer.Domain.Repositories;
+using MyBeer.Infrastructure;
+using MyBeer.Infrastructure.Repositories;
+using MyBeer.Application.Services;
+using MyBeer.Application.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("MyBeerDatabase")));
 
-    
+builder.Services.AddScoped<IBeerRepository, BeerRepository>();
+builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
+
+builder.Services.AddScoped<IBeerService, BeerService>();
+
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
