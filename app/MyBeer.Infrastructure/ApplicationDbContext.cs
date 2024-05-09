@@ -6,13 +6,13 @@ using MyBeer.Infrastructure.Configurations;
 
 namespace MyBeer.Infrastructure.Data;
 
-public class MyBeerContext : DbContext
+public class ApplicationDbContext : DbContext
 {
     public DbSet<Beer> Beers => Set<Beer>();
     public DbSet<Ingredient> Ingredients => Set<Ingredient>();
     public DbSet<BeerIngredient> BeerIngredients => Set<BeerIngredient>();
 
-    public MyBeerContext(DbContextOptions<MyBeerContext> options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
