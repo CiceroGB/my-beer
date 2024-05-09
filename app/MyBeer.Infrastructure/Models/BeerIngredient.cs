@@ -1,7 +1,4 @@
-// MyBeer.Infrastructure/Model/BeerIngredient.cs
-
 using MyBeer.Domain.Entities;
-using System;
 
 namespace MyBeer.Infrastructure.Models
 {

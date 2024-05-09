@@ -4,7 +4,7 @@ using MyBeer.Infrastructure.Models;
 using MyBeer.Infrastructure.Configurations;
 
 
-namespace MyBeer.Infrastructure.Data;
+namespace MyBeer.Infrastructure;
 
 public class ApplicationDbContext : DbContext
 {
