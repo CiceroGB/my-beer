@@ -13,4 +13,5 @@ internal class IngredientConfiguration : IEntityTypeConfiguration<Ingredient>
                .IsRequired()
                .HasMaxLength(100);
     }
+    
 }
